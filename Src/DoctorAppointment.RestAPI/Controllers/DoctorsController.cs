@@ -10,9 +10,9 @@ namespace DoctorAppointment.RestAPI.Controllers
     [ApiController]
     public class DoctorsController : ControllerBase
     {
-        private readonly DoctorService _service;
+        private readonly PatientsService _service;
 
-        public DoctorsController(DoctorService service)
+        public DoctorsController(PatientsService service)
         {
             _service = service;
         }

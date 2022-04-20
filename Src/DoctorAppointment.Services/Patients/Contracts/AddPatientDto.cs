@@ -1,10 +1,10 @@
-﻿namespace DoctorAppointment.Services.Doctors
+﻿namespace DoctorAppointment.Services.Patients.Contracts
 {
-    public class UpdatePatientsDto
+    public class AddPatientDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string NationalCode { get; set; }
-        public string Field { get; set; }
     }
+    
 }

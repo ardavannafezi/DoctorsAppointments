@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DoctorAppointment.Services.Doctors.Contracts
+namespace DoctorAppointment.Services.Patients.Contracts
 {
     public interface PatientsService
     {
-        void Add(AddDoctorDto dto);
-        List<GetDoctorDto> GetAll();
+        void Add(AddPatientDto dto);
+        List<GetPatientDto> GetAll();
         void Delete(string nationalId);
-        void Update(string nationalCode, UpdatedocterDto dto);
+        void Update(string nationalCode, UpdatePatientsDto dto);
     }
 }

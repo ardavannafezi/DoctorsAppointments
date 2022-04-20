@@ -40,7 +40,7 @@ namespace DoctorAppointment.RestAPI
 
             services.AddScoped<DoctorRepository, EFDoctorRepository>();
             services.AddScoped<UnitOfWork, EFUnitOfWork>();
-            services.AddScoped<DoctorService, DoctorAppService>();
+            services.AddScoped<PatientsService, DoctorAppService>();
             
             services.AddSwaggerGen(c =>
             {
