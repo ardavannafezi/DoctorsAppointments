@@ -13,6 +13,6 @@ namespace DoctorAppointment.Services.Patients.Contracts
         bool IsExistNationalCode(string nationalCode);
         List<GetPatientDto> GetAll();
         void Delete(Patient patient);
-        public Patient GetDoctorById(string nationalId);
+        public Patient GetPatientById(string nationalId);
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace DoctorAppointment.Services.Doctors
 {
-    public class UpdatePatientsDto
+    public class UpdateDoctorsDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

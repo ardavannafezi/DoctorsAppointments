@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace DoctorAppointment.Services.Patients
 {
-    public class DoctorAppService : PatientsService
+    public class PatientAppService : PatientsService
     {
         private readonly PatientsRepository _repository;
         private readonly UnitOfWork _unitOfWork;
 
-        public DoctorAppService(
+        public PatientAppService(
             PatientsRepository repository,
             UnitOfWork unitOfWork)
         {

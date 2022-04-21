@@ -1,8 +1,11 @@
 using DoctorAppointment.Infrastructure.Application;
 using DoctorAppointment.Persistence.EF;
 using DoctorAppointment.Persistence.EF.Doctors;
+using DoctorAppointment.Persistence.EF.Patients;
 using DoctorAppointment.Services.Doctors;
 using DoctorAppointment.Services.Doctors.Contracts;
+using DoctorAppointment.Services.Patients;
+using DoctorAppointment.Services.Patients.Contracts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -38,10 +41,12 @@ namespace DoctorAppointment.RestAPI
             services.AddDbContext<ApplicationDbContext>
                 (_ => _.UseSqlServer(Configuration["ConnectionString"]));
 
-            services.AddScoped<DoctorRepository, EFDoctorRepository>();
+            services.AddScoped<DoctorRepository, EFDoctoRepository>();
             services.AddScoped<UnitOfWork, EFUnitOfWork>();
-            services.AddScoped<PatientsService, DoctorAppService>();
-            
+            services.AddScoped<PatientsRepository, EFPateintRepository>();
+            services.AddScoped<PatientsService, PatientAppService>();
+
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DoctorAppointment.RestAPI", Version = "v1" });

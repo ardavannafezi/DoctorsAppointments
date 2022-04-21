@@ -65,7 +65,7 @@ namespace DoctorAppointment.Services.Doctors
             _unitOfWork.Commit();
         }
 
-        public void Update(string nationalCode , UpdatedocterDto dto)
+        public void Update(string nationalCode , UpdateDoctorsDto dto)
         {
             var isDoctorExist = _repository
                 .IsExistNationalCode(nationalCode);

@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace DoctorAppointment.Persistence.EF.Doctors
 {
-    public class EFDoctorRepository : DoctorRepository
+    public class EFDoctoRepository : DoctorRepository
     {
         private readonly DbSet<Doctor> _doctors;
 
-        public EFDoctorRepository(ApplicationDbContext dbcontext)
+        public EFDoctoRepository(ApplicationDbContext dbcontext)
         {
             _doctors = dbcontext.Set<Doctor>();
         }
