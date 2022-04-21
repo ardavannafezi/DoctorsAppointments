@@ -12,6 +12,7 @@ namespace DoctorAppointment.Services.Appoitnments.Contracts
         void Add(Appointment appointment);
         bool IsExist(int doctorId, int patientId, DateTime date );
         bool IsExistById(int id);
+        int CountDoctorAppointment(int DoctorId, DateTime Date);
         List<GetAppointmentsDto> GetAll();
         void Delete(Appointment appointment);
         public Appointment GetAppointmentById(int Id);

@@ -33,6 +33,14 @@ namespace DoctorAppointment.Services.Appoitnments
 
             };
 
+            int AppointmentsInDay = _repository
+                .CountDoctorAppointment(dto.DoctorId, dto.Date);
+
+            if (AppointmentsInDay >= 6)
+            {
+                throw new DayIsFull();
+            }
+
             var isAppointmentExist = _repository
                 .IsExist(appointment.DoctorId, appointment.PatientId, dto.Date.Date);
 
