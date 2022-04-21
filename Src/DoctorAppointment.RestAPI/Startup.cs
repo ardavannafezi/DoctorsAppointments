@@ -43,7 +43,7 @@ namespace DoctorAppointment.RestAPI
 
             services.AddScoped<DoctorRepository, EFDoctoRepository>();
             services.AddScoped<UnitOfWork, EFUnitOfWork>();
-            services.AddScoped<PatientsRepository, EFPateintRepository>();
+            services.AddScoped<AppointmentsRepository, EFPateintRepository>();
             services.AddScoped<PatientsService, PatientAppService>();
 
 

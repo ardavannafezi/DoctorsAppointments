@@ -11,11 +11,11 @@ namespace DoctorAppointment.Services.Patients
 {
     public class PatientAppService : PatientsService
     {
-        private readonly PatientsRepository _repository;
+        private readonly AppointmentsRepository _repository;
         private readonly UnitOfWork _unitOfWork;
 
         public PatientAppService(
-            PatientsRepository repository,
+            AppointmentsRepository repository,
             UnitOfWork unitOfWork)
         {
             _repository = repository;
