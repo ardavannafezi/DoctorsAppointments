@@ -11,11 +11,11 @@ namespace DoctorAppointment.Services.Patients
 {
     public class PatientAppService : PatientsService
     {
-        private readonly AppointmentsRepository _repository;
+        private readonly PatientsRepository _repository;
         private readonly UnitOfWork _unitOfWork;
 
         public PatientAppService(
-            AppointmentsRepository repository,
+            PatientsRepository repository,
             UnitOfWork unitOfWork)
         {
             _repository = repository;
@@ -73,11 +73,11 @@ namespace DoctorAppointment.Services.Patients
                 throw new PatientDoesntExist();
             }
 
-            var doctor =  _repository.GetPatientById(nationalCode);
+            var patient =  _repository.GetPatientById(nationalCode);
 
-            doctor.FirstName = dto.FirstName;
-            doctor.LastName = dto.LastName;
-            doctor.NationalCode = dto.NationalCode;
+            patient.FirstName = dto.FirstName;
+            patient.LastName = dto.LastName;
+            patient.NationalCode = dto.NationalCode;
             _unitOfWork.Commit();
 
         }

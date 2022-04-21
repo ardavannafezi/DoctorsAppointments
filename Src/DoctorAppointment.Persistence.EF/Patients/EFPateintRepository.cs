@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DoctorAppointment.Persistence.EF.Patients
 {
-    public class EFPateintRepository : AppointmentsRepository
+    public class EFPateintRepository : PatientsRepository
     {
         private readonly DbSet<Patient> _Patients;
 
