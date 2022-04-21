@@ -1,7 +1,10 @@
 using DoctorAppointment.Infrastructure.Application;
 using DoctorAppointment.Persistence.EF;
+using DoctorAppointment.Persistence.EF.Appointments;
 using DoctorAppointment.Persistence.EF.Doctors;
 using DoctorAppointment.Persistence.EF.Patients;
+using DoctorAppointment.Services.Appoitnments;
+using DoctorAppointment.Services.Appoitnments.Contracts;
 using DoctorAppointment.Services.Doctors;
 using DoctorAppointment.Services.Doctors.Contracts;
 using DoctorAppointment.Services.Patients;
@@ -42,10 +45,12 @@ namespace DoctorAppointment.RestAPI
                 (_ => _.UseSqlServer(Configuration["ConnectionString"]));
 
             services.AddScoped<DoctorRepository, EFDoctoRepository>();
+            services.AddScoped<DoctorService, DoctorAppService>();
             services.AddScoped<UnitOfWork, EFUnitOfWork>();
             services.AddScoped<PatientsRepository, EFPateintRepository>();
             services.AddScoped<PatientsService, PatientAppService>();
-
+            services.AddScoped<AppointmentRepository, EFAppointmentRepository>();
+            services.AddScoped<AppointmenmtService, AppointmentAppService>();
 
             services.AddSwaggerGen(c =>
             {

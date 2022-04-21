@@ -37,6 +37,7 @@ namespace DoctorAppointment.Persistence.EF.Doctors
         {
             return _doctors.Select(x => new GetDoctorDto
             {
+                Id = x.Id,
                 FirstName = x.FirstName,
                 LastName = x.LastName,
                 Field = x.Field,

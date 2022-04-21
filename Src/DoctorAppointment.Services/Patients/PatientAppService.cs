@@ -73,11 +73,11 @@ namespace DoctorAppointment.Services.Patients
                 throw new PatientDoesntExist();
             }
 
-            var doctor =  _repository.GetPatientById(nationalCode);
+            var patient =  _repository.GetPatientById(nationalCode);
 
-            doctor.FirstName = dto.FirstName;
-            doctor.LastName = dto.LastName;
-            doctor.NationalCode = dto.NationalCode;
+            patient.FirstName = dto.FirstName;
+            patient.LastName = dto.LastName;
+            patient.NationalCode = dto.NationalCode;
             _unitOfWork.Commit();
 
         }
